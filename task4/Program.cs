@@ -70,12 +70,11 @@ class Program
             int m = jaggedArray[i].Length;
             int lastEvenElement = -1;
 
-            for (int j = m - 1; j >= 0; j--)
+            foreach (int element in jaggedArray[i])
             {
-                if (jaggedArray[i][j] % 2 == 0)
+                if (element % 2 == 0)
                 {
-                    lastEvenElement = jaggedArray[i][j];
-                    break;
+                    lastEvenElement = element;
                 }
             }
 
@@ -87,15 +86,11 @@ class Program
 
     static void PrintJaggedArray(int[][] jaggedArray)
     {
-        int n = jaggedArray.Length;
-
-        for (int i = 0; i < n; i++)
+        foreach (var row in jaggedArray)
         {
-            int m = jaggedArray[i].Length;
-
-            for (int j = 0; j < m; j++)
+            foreach (var element in row)
             {
-                Console.Write(jaggedArray[i][j] + "\t");
+                Console.Write(element + "\t");
             }
             Console.WriteLine();
         }
@@ -105,9 +100,9 @@ class Program
     {
         int n = array.Length;
 
-        for (int i = 0; i < n; i++)
+        foreach (var element in array)
         {
-            Console.Write(array[i] + "\t");
+            Console.Write(element + "\t");
         }
         Console.WriteLine();
     }
